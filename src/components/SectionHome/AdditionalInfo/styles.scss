@@ -1,0 +1,68 @@
+.card {
+     cursor: pointer;
+     perspective: 1500px;
+     position: relative;
+     width: 300px;
+     height: 500px;
+     user-select: none;
+
+     &__heading {
+          font-size: 45px;
+          color: white;
+          user-select: none;
+
+          &__this1 {
+               color: white;
+               font-size: 80px;
+               line-height: 70px;
+          }
+
+     }
+
+     &__text {
+          font-size: 14px;
+          padding-right: 30px;
+          font-weight: bold;
+     }
+
+     &__image {
+          width: 24px;
+          height: 24px;
+          align-self: flex-end;
+     }
+
+     &__side {
+          border-radius: 20px;
+          position: absolute;
+          display: flex;
+          padding: 20px;
+          flex-direction: column;
+          justify-content: space-between;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          transition-delay: 0.2s;
+          transition: all 1s ease;
+          backface-visibility: hidden;
+
+          &--front {
+               background: linear-gradient(163deg, rgba(255, 200, 39, 1) 0%, rgba(252, 128, 66, 1) 50%, rgba(239, 109, 155, 1) 100%);
+          }
+
+          &--back {
+               transform: rotateY(180deg);
+               background-color: #fff;
+               padding: 80px 20px 20px 50px;
+          }
+     }
+
+
+     &:active &__side--front {
+          transform: rotateY(-180deg);
+     }
+
+     &:active &__side--back {
+          transform: rotateY(0);
+     }
+}
